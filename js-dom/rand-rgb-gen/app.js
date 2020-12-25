@@ -12,8 +12,6 @@ const makeRandColor = () => {
 }
 
 btn.addEventListener('click', () => {
-  rgb = makeRandColor();
-  // Change body background color + text.
-  body.style.background = rgb;
-  rgbText.innerText = rgb;
+  body.style.background = makeRandColor();
+  rgbText.innerText = makeRandColor();
 });
