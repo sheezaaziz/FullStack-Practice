@@ -46,8 +46,8 @@ winningScoreSelect.addEventListener('change', function() {
 
 reset = () => {
   gameOver = false;
-  p1.score = 0;
-  p2.score = 0;
-  p1.display.innerText = p1.score;
-  p2.display.innerText = p2.score;
+  for (let p of [p1, p2]) {
+    p.score = 0;
+    p.display.innerText = 0;
+  }
 };
