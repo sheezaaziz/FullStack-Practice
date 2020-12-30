@@ -23,7 +23,6 @@ rainbow = async () => {
   await delayedColourChange('blue', 1000);
   await delayedColourChange('indigo', 1000);
   await delayedColourChange('violet', 1000);
-  fjsk
   return "All Done! 💰";
 }
 
