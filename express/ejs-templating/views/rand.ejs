@@ -1,0 +1,8 @@
+<%- include('partials/head')  %>
+    <p>Your random number is: <%= rand %></p>
+    <% if (rand % 2 === 0) { %>
+      <p>You got an even number!</p>
+    <% } else {%>
+      <p>You got an odd number!</p>
+    <% } %>
+<%- include('partials/footer')  %>
