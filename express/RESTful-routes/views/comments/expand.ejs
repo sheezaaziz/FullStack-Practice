@@ -1,0 +1,10 @@
+<%- include('../partials/head') %>
+    <h1>Comment id: <%= id %></h1>
+    <h2>Comment author: <%= comment.username %></h2>
+    <p><%= comment.comment %></p>
+    <a href="/comments">Go to comments</a>
+    <a href="/comments/<%= id %>/edit">Go to edit</a>
+    <form method="post" action="/comments/<%= id %>?_method=DELETE">
+      <button>Delete</button>
+    </form>
+<%- include('../partials/footer') %>

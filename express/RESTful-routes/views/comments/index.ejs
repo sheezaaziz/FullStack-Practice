@@ -1,0 +1,11 @@
+<%- include('../partials/head') %>
+    <ul>
+    <% for (let c of comments) { %>
+      <li>
+        <%= c.comment %> <b>- <%= c.username%></b>
+        <a href="/comments/<%= c.id %>">Expand</a>
+      </li>
+    <%  } %>
+    </ul>
+    <a href="/comments/new">Go to create a comment</a>
+<%- include('../partials/footer') %>

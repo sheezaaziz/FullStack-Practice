@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+    <form action="/comments" method="post">
+      <section>
+        <!-- note 'for' and 'id' are connected. -->
+        <label for="username">Please enter your username:</label>
+        <br>
+        <input id="username" type="text" name="username">
+      </section>
+      <section>
+        <label for="comment">Please enter your comment:</label>
+        <br>
+        <textarea id="comment" name="comment" rows="5" cols="20"></textarea>
+      </section>
+      <button>Submit</button>
+    </form>
+    <a href="/comments">Go to comments</a>
+<%- include('../partials/footer') %>
