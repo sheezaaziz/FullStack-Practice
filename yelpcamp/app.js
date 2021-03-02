@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
+
 const Campground = require('./models/campground');
 
 mongoose.connect('mongodb://localhost:27017/yelpcamp', {
@@ -20,7 +21,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', (req, res) => {
-  res.send('hello from yelpcamp!');
+  res.render('home');
 })
 
 app.get('/makecampground', async (req, res) => {
