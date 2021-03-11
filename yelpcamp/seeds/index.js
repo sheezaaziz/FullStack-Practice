@@ -27,6 +27,7 @@ const seedDB = async () => {
       // can not use randomElement bc city must match state.
       location: `${cities[random1000].city}, ${cities[random1000].state}`,
       title: `${randomElement(descriptors)}, ${randomElement(places)}`,
+      image: `https://source.unsplash.com/collection/483251`,
     });
     await camp.save();
   }
