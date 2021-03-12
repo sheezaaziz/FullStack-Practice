@@ -28,6 +28,8 @@ const seedDB = async () => {
       location: `${cities[random1000].city}, ${cities[random1000].state}`,
       title: `${randomElement(descriptors)}, ${randomElement(places)}`,
       image: `https://source.unsplash.com/collection/483251`,
+      description: 'lorem ipsum lorem',
+      price: 130,
     });
     await camp.save();
   }
