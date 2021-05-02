@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>All Farms</title>
+  </head>
+  <body>
+    <h1>All Farms</h1>
+    <ul>
+      <% for (farm of farms) { %>
+        <li><a href="/farms/<%= farm._id %>"><%= farm.name %></a></li>
+      <% } %>
+    </ul>
+  </body>
+</html>
