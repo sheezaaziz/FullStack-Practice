@@ -16,7 +16,7 @@ mongoose.connection.once('open', () => {
   console.log('connected to db');
 });
 
-app.use(cors()) // to allow cross-origin requests
+app.use(cors()); // to allow cross-origin requests
 app.use('/graphql', graphqlHTTP({
   schema,
   graphiql: true,
