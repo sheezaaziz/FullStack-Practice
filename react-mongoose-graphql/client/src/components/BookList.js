@@ -1,25 +1,20 @@
-import React from 'react';
-import { gql, useQuery } from '@apollo/client';
-
-// graphql queries
-const BOOK_LIST = gql`
-  query getBooksQuery {
-    books {
-      name
-      id
-    }
-  }
-`;
+import React, { useState } from 'react';
+import { useQuery } from '@apollo/client';
+import { GET_BOOKS } from '../queries/queries';
+import BookDetails from './BookDetails';
 
 export default function BookList() {
-  const { loading, error, data } = useQuery(BOOK_LIST);
+  const [selected, setSelected] = useState('');
 
   const DisplayBooks = () => {
+    const { loading, error, data } = useQuery(GET_BOOKS);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
-      
+
+    console.log(data);
+
     return data.books.map(({ name, id }) => (
-      <li key={id}>{name}</li>
+      <li key={id} onClick={() => setSelected(id)}>{name}</li>
     ));
   }
 
@@ -28,6 +23,7 @@ export default function BookList() {
       <ul id='book-list'>
         { DisplayBooks() }
       </ul>
+      <BookDetails bookId={selected}/>
     </div>
-  )
+  );
 }
