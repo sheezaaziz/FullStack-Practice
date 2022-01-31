@@ -1,6 +1,6 @@
 import { ApolloServer } from "apollo-server";
 import { typeDefs } from "./schema";
-import { Query, Mutation, Profile, Post } from "./resolvers";
+import { Query, Mutation, Profile, Post, User } from "./resolvers";
 import { PrismaClient, Prisma } from "@prisma/client";
 import { getUserFromToken } from "./utils/getUserFromToken";
 // Prisma terminal cmds (note since this is a js project we must prefix all cmds with 'npx'):
@@ -12,7 +12,7 @@ import { getUserFromToken } from "./utils/getUserFromToken";
 // $ nodemon index.ts (Browse your data on Apollo GraphQL server)
 // $ npm run start:dev (Browse your data on Apollo GraphQL server)
 
-const prisma = new PrismaClient();
+export const prisma = new PrismaClient();
 
 export interface Context {
     prisma: PrismaClient<Prisma.PrismaClientOptions, never, Prisma.RejectOnNotFound | Prisma.RejectPerOperation | undefined>
@@ -28,7 +28,8 @@ const server = new ApolloServer({
         Query,
         Mutation,
         Profile,
-        Post
+        Post,
+        User,
     },
     context: async ({ req }: any): Promise<Context> => {
         const userInfo = await getUserFromToken(req.headers.authorization)
