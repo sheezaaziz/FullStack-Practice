@@ -17,8 +17,15 @@
 } */
 
 /* for ProductModal */
-@layer base {
+/* @layer base {
   body {
     @apply bg-slate-100
+  }
+} */
+
+/* for ImageGallery */
+@layer base {
+  body {
+    @apply bg-cyan-50 flex items-center justify-center min-h-screen
   }
 }
