@@ -24,8 +24,11 @@
 } */
 
 /* for ImageGallery */
-@layer base {
+/* @layer base {
   body {
     @apply bg-cyan-50 flex items-center justify-center min-h-screen
   }
-}
+} */
+
+/* for login modal */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap')
